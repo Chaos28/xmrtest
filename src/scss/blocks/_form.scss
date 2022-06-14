@@ -1,0 +1,184 @@
+.form {
+	&__input {
+		width: 100%;
+		border: 1px solid $stroke400;
+		padding: 8px 16px;
+		border-radius: 12px;
+		color: $txt900;
+		font-size: $txt400-bs;
+		line-height: $lh-default;
+		background-color: $bg200;
+
+		&::placeholder {
+			color: $txt400;
+			font-size: inherit;
+			line-height: $lh-default;
+		}
+
+		&:focus-visible:not(:checked) {
+			outline: $outline-default;
+		}
+
+		&[type="text"],
+		&[type="password"] {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	&__auth-data-block {
+		display: flex;
+		flex-direction: column;
+
+		textarea {
+			min-height: 156px;
+			border-radius: 12px;
+			border: 1px solid $stroke400;
+			background-color: $bg200;
+			resize: none;
+
+			&::-webkit-scrollbar {
+				width: 0px;
+			}
+		}
+
+		&--seed {
+			margin-bottom: 110px;
+		}
+
+		&--sign-up {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__block-title {
+		position: relative;
+		margin-bottom: 8px;
+		font-size: $label400-bs;
+		line-height: $lh-alt;
+		font-weight: 500;
+		color: $txt900;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		legend {
+			max-width: 60%;
+		}
+	}
+
+	&__submit-btns {
+		margin-bottom: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px 0;
+	}
+
+	&__auth-block-link {
+		margin: 0 auto;
+		text-align: center;
+		font-size: $txt400-bs;
+		color: $txt900;
+		font-weight: 400;
+
+		a {
+			@include link;
+			font-size: $btn300-bs;
+			font-weight: 600;
+		}
+	}
+
+	&__inputs-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 24px;
+
+		fieldset:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__auth-warning {
+		margin-bottom: 24px;
+		text-align: center;
+	}
+}
+
+// Media SM
+
+.form {
+	@media (min-width: $sm) {
+		&__block-title {
+			margin-bottom: 12px;
+		}
+
+		&__auth-data-block {
+
+			&--seed {
+				margin-bottom: 24px;
+			}
+
+			textarea {
+				min-height: 100px;
+			}
+		}
+
+		&__submit-btns {
+			margin-bottom: 20px;
+		}
+
+		&__auth-warning {
+			text-align: left;
+		}
+	}
+}
+
+// Media MD
+
+// Media LG
+
+.form {
+	@media (min-width: $lg) {
+
+		&__input {
+			padding: 16px;
+			font-size: $txt400-lg;
+		}
+
+		&__auth-data-block {
+
+			&--seed {
+				margin-bottom: 48px;
+			}
+
+			textarea {
+				min-height: 116px;
+			}
+
+			&--seed {
+				margin-bottom: 48px;
+			}
+		}
+
+		&__inputs-wrapper {
+			margin-bottom: 48px;
+		}
+
+		&__block-title {
+			font-size: $label400-lg;
+		}
+
+		&__submit-btns {
+			margin-bottom: 24px;
+		}
+
+		&__auth-block-link {
+			font-size: $txt400-lg;
+
+			a {
+				font-size: inherit;
+			}
+		}
+	}
+}

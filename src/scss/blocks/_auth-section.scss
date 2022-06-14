@@ -1,0 +1,149 @@
+.auth-section {
+	padding: 24px $p-bs 32px;
+	background-color: $bg100;
+	border-radius: 16px 16px 0 0;
+	flex-grow: 1;
+
+	&__title {
+		color: $txt900;
+		font-size: $h400-bs;
+		line-height: $lh-alt;
+		margin: 0;
+		margin-bottom: 4px;
+	}
+
+	&__description {
+		margin: 0;
+		margin-bottom: 20px;
+
+		p {
+			line-height: $lh-default;
+		}
+	}
+
+	&__switch-method {
+		border-radius: 12px;
+		padding: 4px;
+		background-color: $bg200;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0 1px;
+		margin-bottom: 20px;
+
+		a {
+			width: 50%;
+			position: relative;
+			cursor: pointer;
+			font-weight: 600;
+			font-size: $btn400-bs;
+			line-height: 1.43;
+			text-align: center;
+			text-transform: uppercase;
+			color: $txt900;
+			display: block;
+			border-radius: 8px;
+			background-color: $bg200;
+			width: 100%;
+			height: 100%;
+			padding: 8px;
+			transition: $transitionDefault;
+
+			&.active {
+				background-color: $bg100;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $bg100;
+			}
+
+		}
+	}
+}
+
+// Media SM
+
+.auth-section {
+	@media (min-width: $sm) {
+		flex-grow: 0;
+		padding: $p-sm;
+		border-radius: 16px;
+
+		&__title {
+			margin-bottom: 4px;
+		}
+
+		&__description {
+			margin-bottom: 16px;
+		}
+
+		&__switch-method {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+//Media MD
+
+.auth-section {
+	@media (min-width: $md) {
+		&__title {
+			margin-bottom: 8px;
+		}
+	}
+}
+
+//Media LG
+
+.auth-section {
+	@media (min-width: $lg) {
+		padding: 40px;
+
+		&__title {
+			font-size: $h400-lg;
+		}
+
+		&__description {
+			margin-bottom: 32px;
+
+			p {
+				font-size: $txt400-lg;
+				line-height: $lh-alt;
+			}
+		}
+
+		&__switch-method {
+			margin-bottom: 32px;
+
+			a {
+				font-size: $btn400-lg;
+				line-height: 20px;
+				padding: 12px;
+			}
+		}
+	}
+}
+
+//Media XL
+
+.auth-section {
+	@media (min-width: $xl) {
+		padding: $p-xl;
+
+		&__title {
+			font-size: $h400-lg;
+			line-height: 20px;
+		}
+
+		&__switch-method {
+			padding: 8px;
+			margin-bottom: 32px;
+			font-size: $txt400-lg;
+
+			label {
+				font-size: $txt400-lg;
+			}
+		}
+	}
+}

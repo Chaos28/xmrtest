@@ -1,0 +1,72 @@
+.section-modal {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+// Media SM
+
+.section-modal {
+	@media (min-width: $sm) {
+		height: auto;
+		width: 488px;
+		flex-grow: 0;
+
+		&--multi-sections {
+			gap: 16px 0;
+			width: 594px;
+		}
+	}
+}
+
+// Media MD
+
+.section-modal {
+	@media (min-width: $md) {
+		&--multi-sections {
+			width: calc($md - $p-md * 2);
+			flex-direction: row-reverse;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 32px 0;
+			background-color: $bg100;
+			border-radius: 16px;
+			padding: $p-md;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				height: calc(100% - $p-md * 2);
+				width: 1px;
+				background-color: $stroke500;
+				left: 50%;
+				top: $p-md;
+			}
+		
+			section {
+				width: calc(50% - 32px);
+
+				&.auth-section {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+// Media LG
+
+.section-modal {
+	@media (min-width: $lg) {
+		width: 586px;
+
+		&--multi-sections {
+			width: calc($lg - (146px * 2));
+			padding:  $p-xl;
+		}
+	}
+}
+
+// 

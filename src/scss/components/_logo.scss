@@ -1,0 +1,63 @@
+.logo {
+	width: 122px;
+	height: 24px;
+	display: block;
+	transition: $transitionDefault;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		transition: $transitionDefault;
+	}
+
+	&__big {
+		display: block;
+	}
+
+	&__small {
+		display: none;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+	}
+
+
+}
+
+// Media SM 
+
+.logo {
+	@media (min-width: $sm) {
+
+		width: 40px;
+		height: 40px;
+
+		&__big {
+			display: none;
+		}
+
+		&__small {
+			display: block;
+		}
+	}
+}
+
+// Media MD
+
+.logo {
+	@media (min-width: $md) {
+
+		width: 200px;
+		height: 40px;
+
+		&__big {
+			display: block;
+		}
+
+		&__small {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@mixin link() {
+
+	line-height: $lh-alt;
+	transition: $transitionDefault;
+
+	&:hover:not(:disabled),
+	&:focus:not(:disabled) {
+		opacity: 0.7;
+	}
+
+}

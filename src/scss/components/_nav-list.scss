@@ -1,0 +1,129 @@
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  gap: 24px 0;
+
+  &__item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      @include link;
+      width: 100%;
+      font-size: $h500-bs;
+      line-height: 1.428;
+      font-weight: 700;
+
+    }
+  }
+}
+
+// media SM
+
+.nav-list {
+  @media (min-width: $sm) {
+    flex-direction: row;
+    gap: 8px 32px;
+    flex-wrap: wrap;
+
+    &__item {
+      width: auto;
+
+      a {
+        width: auto;
+        text-transform: uppercase;
+        font-size: $btn400-bs;
+      }
+
+      &--login,
+      &--create {
+        display: none;
+      }
+    }
+  }
+}
+
+// media MD {
+.nav-list {
+  @media (min-width: $md) {
+    &__item {
+      a {
+        font-size: $btn400-lg;
+        line-height: $lh-alt;
+      }
+    }
+  }
+}
+
+// Nav list Sidebar
+
+.nav-list--sidebar {
+  text-align: left;
+  color: $txt400;
+  gap: 0;
+  .nav-list__item {
+    a {
+      position: relative;
+      padding: 10px 24px;
+      gap: 0 16px;
+      font-size: $btn300-bs;
+      line-height: 20px;
+      font-weight: 600;
+			display: flex;
+      align-items: center;
+
+      svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+          stroke: currentColor;
+        }
+      }
+    }
+
+    a.active {
+      background: $gradient-sidebar-menu;
+      color: $txt100;
+      &::after {
+        content: "";
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $accent500;
+      }
+    }
+  }
+}
+
+//Media SM
+
+.nav-list--sidebar {
+  @media (min-width: $sm) {
+		flex-direction: column;
+		align-items: flex-start;
+    .nav-list__item {
+			width: 100%;
+			justify-content: flex-start;
+      a {
+				width: 100%;
+        padding: $p-bs;
+
+        &.active {
+          background: $gradient-siderbar-menu-reverse;
+
+          &::after {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

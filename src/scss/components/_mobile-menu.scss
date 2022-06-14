@@ -1,0 +1,121 @@
+.mobile-menu {
+  @media (max-width: ($sm - 1)) {
+    position: absolute;
+    width: 100%;
+    max-height: 95vh;
+    left: 0;
+    top: 100%;
+    background-color: $bg900;
+    padding: 80px 0 64px;
+    z-index: 10;
+    display: none;
+    overflow-y: auto;
+  }
+}
+
+.mobile-menu--sidebar {
+  display: block;
+  width: 76%;
+  height: 100vh;
+  max-height: none;
+  left: auto;
+  top: 0;
+  right: -100%;
+  padding-left: 22px;
+  padding-right: 22px;
+
+  .mobile-menu__rate-table {
+    line-height: 18px;
+    padding: 16px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px 0;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: $txt400;
+    font-weight: 500;
+
+    &-value {
+      color: $txt100;
+    }
+  }
+
+  .mobile-menu__navs-block {
+    margin: 0 -22px;
+    display: flex;
+    flex-direction: column;
+
+    > ul {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      position: relative;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        height: 1px;
+        width: calc(100% - (24px * 2));
+        background-color: $txt400;
+        left: 50%;
+        bottom: -24px;
+        position: absolute;
+        transform: translateX(-50%);
+      }
+    }
+
+    // > *:not(:last-child) {
+    // 	padding-bottom: 24px;
+    // 	border-bottom: 1px solid $txt400;
+    // }
+  }
+}
+
+//Media SM
+
+.mobile-menu--sidebar {
+  @media (min-width: $sm) {
+    position: static;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    right: auto;
+    top: auto;
+
+    .mobile-menu__rate-table {
+      margin-left: 48px;
+      margin-right: 48px;
+    }
+
+    .mobile-menu__navs-block {
+      margin: 0;
+
+      > ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+        &:not(:last-child)::after {
+          content: "";
+          height: 1px;
+          width: calc(100% - (12px * 2));
+          background-color: $txt400;
+          left: 50%;
+          bottom: -8px;
+          position: absolute;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
